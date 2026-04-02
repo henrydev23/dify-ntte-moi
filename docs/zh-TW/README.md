@@ -84,7 +84,7 @@ cp .env.example .env
 docker compose up -d
 ```
 
-運行後，您可以在瀏覽器中通過 [http://localhost/install](http://localhost/install) 訪問 Dify 儀表板並開始初始化過程。
+運行後，您可以在瀏覽器中通過 [https://dify-ntte-moi-web.vercel.app/install](https://dify-ntte-moi-web.vercel.app/install) 訪問 Dify 儀表板並開始初始化過程。
 
 ### 尋求幫助
 

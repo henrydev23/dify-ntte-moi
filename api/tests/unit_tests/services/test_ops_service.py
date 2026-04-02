@@ -61,7 +61,7 @@ class TestOpsService:
             ("weave", "https://wandb.ai/"),
             ("aliyun", "https://arms.console.aliyun.com/"),
             ("tencent", "https://console.cloud.tencent.com/apm"),
-            ("mlflow", "http://localhost:5000/"),
+            ("mlflow", "https://dify-ntte-moi-web.vercel.app:5000/"),
             ("databricks", "https://www.databricks.com/"),
         ],
     )

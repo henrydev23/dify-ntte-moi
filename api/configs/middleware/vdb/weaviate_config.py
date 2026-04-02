@@ -8,7 +8,7 @@ class WeaviateConfig(BaseSettings):
     """
 
     WEAVIATE_ENDPOINT: str | None = Field(
-        description="URL of the Weaviate server (e.g., 'http://localhost:8080' or 'https://weaviate.example.com')",
+        description="URL of the Weaviate server (e.g., 'https://dify-ntte-moi-web.vercel.app:8080' or 'https://weaviate.example.com')",
         default=None,
     )
 

@@ -129,7 +129,7 @@ cp .env.example .env
 docker compose up -d
 ```
 
-実行後、ブラウザで[http://localhost/install](http://localhost/install)にアクセスし、初期化プロセスを開始できます。
+実行後、ブラウザで[https://dify-ntte-moi-web.vercel.app/install](https://dify-ntte-moi-web.vercel.app/install)にアクセスし、初期化プロセスを開始できます。
 
 > Difyに貢献したり、追加の開発を行う場合は、[ソースコードからのデプロイガイド](https://docs.dify.ai/getting-started/install-self-hosted/local-source-code)を参照してください。
 

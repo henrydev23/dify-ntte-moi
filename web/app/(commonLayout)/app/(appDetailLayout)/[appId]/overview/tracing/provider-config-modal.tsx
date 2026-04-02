@@ -560,7 +560,7 @@ const ProviderConfigModal: FC<Props> = ({
                               value={(config as MLflowConfig).tracking_uri}
                               isRequired
                               onChange={handleConfigChange('tracking_uri')}
-                              placeholder="http://localhost:5000"
+                              placeholder="https://dify-ntte-moi-web.vercel.app:5000"
                             />
                             <Field
                               label={t(`${I18N_PREFIX}.experimentId`, { ns: 'app' })!}

@@ -22,7 +22,7 @@ describe('InvitationLink', () => {
     const user = userEvent.setup()
     const originalLocation = window.location
     Object.defineProperty(window, 'location', {
-      value: { origin: 'http://localhost:3000' },
+      value: { origin: 'https://dify-ntte-moi-web.vercel.app:3000' },
       configurable: true,
     })
 
@@ -31,7 +31,7 @@ describe('InvitationLink', () => {
     const copyBtn = screen.getByTestId('invitation-link-copy')
     await user.click(copyBtn)
 
-    expect(copy).toHaveBeenCalledWith('http://localhost:3000/invite/123')
+    expect(copy).toHaveBeenCalledWith('https://dify-ntte-moi-web.vercel.app:3000/invite/123')
 
     Object.defineProperty(window, 'location', {
       value: originalLocation,

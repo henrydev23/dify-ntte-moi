@@ -50,7 +50,7 @@ class TestGetOAuthProviders:
         mock_config.GITHUB_CLIENT_SECRET = github_config["secret"]
         mock_config.GOOGLE_CLIENT_ID = google_config["id"]
         mock_config.GOOGLE_CLIENT_SECRET = google_config["secret"]
-        mock_config.CONSOLE_API_URL = "http://localhost"
+        mock_config.CONSOLE_API_URL = "https://dify-ntte-moi-web.vercel.app"
 
         with app.app_context():
             providers = get_oauth_providers()
@@ -167,7 +167,7 @@ class TestOAuthCallback:
         app,
         oauth_setup,
     ):
-        mock_config.CONSOLE_WEB_URL = "http://localhost:3000"
+        mock_config.CONSOLE_WEB_URL = "https://dify-ntte-moi-web.vercel.app:3000"
         mock_get_providers.return_value = {"github": oauth_setup["provider"]}
         mock_generate_account.return_value = (oauth_setup["account"], True)
         mock_account_service.login.return_value = oauth_setup["token_pair"]
@@ -177,7 +177,7 @@ class TestOAuthCallback:
 
         oauth_setup["provider"].get_access_token.assert_called_once_with("test_code")
         oauth_setup["provider"].get_user_info.assert_called_once_with("access_token")
-        mock_redirect.assert_called_once_with("http://localhost:3000?oauth_new_user=true")
+        mock_redirect.assert_called_once_with("https://dify-ntte-moi-web.vercel.app:3000?oauth_new_user=true")
 
     @pytest.mark.parametrize(
         ("exception", "expected_error"),
@@ -220,7 +220,7 @@ class TestOAuthCallback:
         app,
         oauth_setup,
     ):
-        mock_config.CONSOLE_WEB_URL = "http://localhost:3000"
+        mock_config.CONSOLE_WEB_URL = "https://dify-ntte-moi-web.vercel.app:3000"
         oauth_setup["provider"].get_user_info.return_value = OAuthUserInfo(
             id="123", name="Test User", email="User@Example.com"
         )
@@ -232,17 +232,17 @@ class TestOAuthCallback:
             resource.get("github")
 
         mock_register_service.get_invitation_by_token.assert_called_once_with(token="invite123")
-        mock_redirect.assert_called_once_with("http://localhost:3000/signin/invite-settings?invite_token=invite123")
+        mock_redirect.assert_called_once_with("https://dify-ntte-moi-web.vercel.app:3000/signin/invite-settings?invite_token=invite123")
 
     @pytest.mark.parametrize(
         ("account_status", "expected_redirect"),
         [
-            (AccountStatus.BANNED, "http://localhost:3000/signin?message=Account is banned."),
+            (AccountStatus.BANNED, "https://dify-ntte-moi-web.vercel.app:3000/signin?message=Account is banned."),
             # CLOSED status: Currently NOT handled, will proceed to login (security issue)
             # This documents actual behavior. See test_defensive_check_for_closed_account_status for details
             (
                 AccountStatus.CLOSED.value,
-                "http://localhost:3000?oauth_new_user=false",
+                "https://dify-ntte-moi-web.vercel.app:3000?oauth_new_user=false",
             ),
         ],
     )
@@ -267,7 +267,7 @@ class TestOAuthCallback:
         expected_redirect,
     ):
 
-        mock_config.CONSOLE_WEB_URL = "http://localhost:3000"
+        mock_config.CONSOLE_WEB_URL = "https://dify-ntte-moi-web.vercel.app:3000"
         mock_get_providers.return_value = {"github": oauth_setup["provider"]}
 
         account = MagicMock()
@@ -360,7 +360,7 @@ class TestOAuthCallback:
         Security consideration: Until properly implemented, CLOSED status provides no protection.
         """
         # Setup
-        mock_config.CONSOLE_WEB_URL = "http://localhost:3000"
+        mock_config.CONSOLE_WEB_URL = "https://dify-ntte-moi-web.vercel.app:3000"
         mock_get_providers.return_value = {"github": oauth_setup["provider"]}
 
         # Create account with CLOSED status
@@ -382,12 +382,12 @@ class TestOAuthCallback:
             resource.get("github")
 
         # Verify current behavior: login succeeds (this is NOT ideal)
-        mock_redirect.assert_called_once_with("http://localhost:3000?oauth_new_user=false")
+        mock_redirect.assert_called_once_with("https://dify-ntte-moi-web.vercel.app:3000?oauth_new_user=false")
         mock_account_service.login.assert_called_once()
 
         # Document expected behavior in comments:
         # Expected: mock_redirect.assert_called_once_with(
-        #     "http://localhost:3000/signin?message=Account is closed."
+        #     "https://dify-ntte-moi-web.vercel.app:3000/signin?message=Account is closed."
         # )
         # Expected: mock_account_service.login.assert_not_called()
 

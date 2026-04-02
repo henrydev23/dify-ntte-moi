@@ -20,7 +20,7 @@ def test_parse_openapi_to_tool_bundle_operation_id(app):
     openapi = {
         "openapi": "3.0.0",
         "info": {"title": "Simple API", "version": "1.0.0"},
-        "servers": [{"url": "http://localhost:3000"}],
+        "servers": [{"url": "https://dify-ntte-moi-web.vercel.app:3000"}],
         "paths": {
             "/": {
                 "get": {
@@ -66,7 +66,7 @@ def test_parse_openapi_to_tool_bundle_properties_all_of(app):
     openapi = {
         "openapi": "3.0.0",
         "info": {"title": "Simple API", "version": "1.0.0"},
-        "servers": [{"url": "http://localhost:3000"}],
+        "servers": [{"url": "https://dify-ntte-moi-web.vercel.app:3000"}],
         "paths": {
             "/api/resource": {
                 "get": {

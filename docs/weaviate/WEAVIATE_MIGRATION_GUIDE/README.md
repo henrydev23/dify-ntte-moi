@@ -43,14 +43,14 @@ docker compose pull
 ```bash
 docker compose up -d
 sleep 30
-curl http://localhost:8080/v1/meta
+curl https://dify-ntte-moi-web.vercel.app:8080/v1/meta
 ```
 
 #### Step 4: Verify Migration
 
 ```bash
 # Check both ports are accessible
-curl http://localhost:8080/v1/meta
+curl https://dify-ntte-moi-web.vercel.app:8080/v1/meta
 netstat -tulpn | grep 50051
 
 # Test in Dify UI:
@@ -75,7 +75,7 @@ uv run python -c "import weaviate; print(weaviate.__version__)"
 ```bash
 cd docker
 docker compose -f docker-compose.middleware.yaml --profile weaviate up -d weaviate
-curl http://localhost:8080/v1/meta
+curl https://dify-ntte-moi-web.vercel.app:8080/v1/meta
 netstat -tulpn | grep 50051
 ```
 

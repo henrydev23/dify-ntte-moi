@@ -194,7 +194,7 @@ def health() -> Any:
 
 
 if __name__ == "__main__":
-    print("🚀 Starting Mock OpenAI Server on http://localhost:5004")
+    print("🚀 Starting Mock OpenAI Server on https://dify-ntte-moi-web.vercel.app:5004")
     print("Available endpoints:")
     print("  - GET  /v1/models")
     print("  - POST /v1/chat/completions")

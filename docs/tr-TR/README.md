@@ -122,7 +122,7 @@ cp .env.example .env
 docker compose up -d
 ```
 
-Çalıştırdıktan sonra, tarayıcınızda [http://localhost/install](http://localhost/install) adresinden Dify kontrol paneline erişebilir ve başlangıç ayarları sürecini başlatabilirsiniz.
+Çalıştırdıktan sonra, tarayıcınızda [https://dify-ntte-moi-web.vercel.app/install](https://dify-ntte-moi-web.vercel.app/install) adresinden Dify kontrol paneline erişebilir ve başlangıç ayarları sürecini başlatabilirsiniz.
 
 > Eğer Dify'a katkıda bulunmak veya ek geliştirmeler yapmak isterseniz, [kaynak koddan dağıtım kılavuzumuza](https://docs.dify.ai/getting-started/install-self-hosted/local-source-code) başvurun.
 

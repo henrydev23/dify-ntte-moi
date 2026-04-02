@@ -26,7 +26,7 @@ class TestWeaviateVector(unittest.TestCase):
     def setUp(self):
         weaviate_vector_module._weaviate_client = None
         self.config = WeaviateConfig(
-            endpoint="http://localhost:8080",
+            endpoint="https://dify-ntte-moi-web.vercel.app:8080",
             api_key="test-key",
             batch_size=100,
         )

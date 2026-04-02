@@ -84,7 +84,7 @@ cp .env.example .env
 docker compose up -d
 ```
 
-रन करने के बाद, आप अपने ब्राउज़र में [http://localhost/install](http://localhost/install) पर Dify डैशबोर्ड एक्सेस कर सकते हैं और प्रारंभिक सेटअप प्रक्रिया शुरू कर सकते हैं।
+रन करने के बाद, आप अपने ब्राउज़र में [https://dify-ntte-moi-web.vercel.app/install](https://dify-ntte-moi-web.vercel.app/install) पर Dify डैशबोर्ड एक्सेस कर सकते हैं और प्रारंभिक सेटअप प्रक्रिया शुरू कर सकते हैं।
 
 #### सहायता प्राप्त करना
 

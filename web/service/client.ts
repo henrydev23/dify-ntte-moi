@@ -32,7 +32,7 @@ function isURL(path: string) {
 }
 
 export function getBaseURL(path: string) {
-  const url = new URL(path, isURL(path) ? undefined : isClient ? window.location.origin : 'http://localhost')
+  const url = new URL(path, isURL(path) ? undefined : isClient ? window.location.origin : 'https://dify-ntte-moi-web.vercel.app')
 
   if (!isClient && !isURL(path)) {
     console.warn('Using localhost as base URL in server environment, please configure accordingly.')

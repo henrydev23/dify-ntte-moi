@@ -826,7 +826,7 @@ describe('CommonCreateModal', () => {
       vi.mocked(isPrivateOrLocalAddress).mockReturnValue(true)
 
       const builder = createMockSubscriptionBuilder({
-        endpoint: 'http://localhost:3000/callback',
+        endpoint: 'https://dify-ntte-moi-web.vercel.app:3000/callback',
       })
 
       render(<CommonCreateModal {...defaultProps} createType={SupportedCreationMethods.MANUAL} builder={builder} />)

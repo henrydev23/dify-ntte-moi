@@ -195,7 +195,7 @@ def test_get_opentelemetry_sdk_version_falls_back(monkeypatch: pytest.MonkeyPatc
             ("example.com:9090", False, "example.com", 9090),
         ),
         (
-            "http://localhost",
+            "https://dify-ntte-moi-web.vercel.app",
             ("localhost:4317", True, "localhost", 4317),
         ),
         (

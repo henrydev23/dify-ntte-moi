@@ -15,7 +15,7 @@ class BaseOAuthTest:
         return {
             "client_id": "test_client_id",
             "client_secret": "test_client_secret",
-            "redirect_uri": "http://localhost/callback",
+            "redirect_uri": "https://dify-ntte-moi-web.vercel.app/callback",
         }
 
     @pytest.fixture

@@ -8,7 +8,7 @@ class MilvusConfig(BaseSettings):
     """
 
     MILVUS_URI: str | None = Field(
-        description="URI for connecting to the Milvus server (e.g., 'http://localhost:19530' or 'https://milvus-instance.example.com:19530')",
+        description="URI for connecting to the Milvus server (e.g., 'https://dify-ntte-moi-web.vercel.app:19530' or 'https://milvus-instance.example.com:19530')",
         default="http://127.0.0.1:19530",
     )
 

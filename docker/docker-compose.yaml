@@ -8,7 +8,7 @@ x-shared-env: &shared-api-worker-env
   CONSOLE_API_URL: ${CONSOLE_API_URL:-}
   CONSOLE_WEB_URL: ${CONSOLE_WEB_URL:-}
   SERVICE_API_URL: ${SERVICE_API_URL:-}
-  TRIGGER_URL: ${TRIGGER_URL:-http://localhost}
+  TRIGGER_URL: ${TRIGGER_URL:-https://dify-ntte-moi-web.vercel.app}
   APP_API_URL: ${APP_API_URL:-}
   APP_WEB_URL: ${APP_WEB_URL:-}
   FILES_URL: ${FILES_URL:-}
@@ -354,7 +354,7 @@ x-shared-env: &shared-api-worker-env
   VIKINGDB_SCHEMA: ${VIKINGDB_SCHEMA:-http}
   VIKINGDB_CONNECTION_TIMEOUT: ${VIKINGDB_CONNECTION_TIMEOUT:-30}
   VIKINGDB_SOCKET_TIMEOUT: ${VIKINGDB_SOCKET_TIMEOUT:-30}
-  LINDORM_URL: ${LINDORM_URL:-http://localhost:30070}
+  LINDORM_URL: ${LINDORM_URL:-https://dify-ntte-moi-web.vercel.app:30070}
   LINDORM_USERNAME: ${LINDORM_USERNAME:-admin}
   LINDORM_PASSWORD: ${LINDORM_PASSWORD:-admin}
   LINDORM_USING_UGC: ${LINDORM_USING_UGC:-True}
@@ -614,7 +614,7 @@ x-shared-env: &shared-api-worker-env
   EXPOSE_PLUGIN_DEBUGGING_PORT: ${EXPOSE_PLUGIN_DEBUGGING_PORT:-5003}
   PLUGIN_DIFY_INNER_API_KEY: ${PLUGIN_DIFY_INNER_API_KEY:-QaHbTe77CtuXmsfyhR7+vRjI/+XbV1AaFy691iy+kGDv2Jvy0/eAh8Y1}
   PLUGIN_DIFY_INNER_API_URL: ${PLUGIN_DIFY_INNER_API_URL:-http://api:5001}
-  ENDPOINT_URL_TEMPLATE: ${ENDPOINT_URL_TEMPLATE:-http://localhost/e/{hook_id}}
+  ENDPOINT_URL_TEMPLATE: ${ENDPOINT_URL_TEMPLATE:-https://dify-ntte-moi-web.vercel.app/e/{hook_id}}
   MARKETPLACE_ENABLED: ${MARKETPLACE_ENABLED:-true}
   MARKETPLACE_API_URL: ${MARKETPLACE_API_URL:-https://marketplace.dify.ai}
   FORCE_VERIFYING_SIGNATURE: ${FORCE_VERIFYING_SIGNATURE:-true}
@@ -657,7 +657,7 @@ x-shared-env: &shared-api-worker-env
   ENABLE_OTEL: ${ENABLE_OTEL:-false}
   OTLP_TRACE_ENDPOINT: ${OTLP_TRACE_ENDPOINT:-}
   OTLP_METRIC_ENDPOINT: ${OTLP_METRIC_ENDPOINT:-}
-  OTLP_BASE_ENDPOINT: ${OTLP_BASE_ENDPOINT:-http://localhost:4318}
+  OTLP_BASE_ENDPOINT: ${OTLP_BASE_ENDPOINT:-https://dify-ntte-moi-web.vercel.app:4318}
   OTLP_API_KEY: ${OTLP_API_KEY:-}
   OTEL_EXPORTER_OTLP_PROTOCOL: ${OTEL_EXPORTER_OTLP_PROTOCOL:-}
   OTEL_EXPORTER_TYPE: ${OTEL_EXPORTER_TYPE:-otlp}
@@ -990,7 +990,7 @@ services:
       - ./volumes/sandbox/dependencies:/dependencies
       - ./volumes/sandbox/conf:/conf
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8194/health"]
+      test: ["CMD", "curl", "-f", "https://dify-ntte-moi-web.vercel.app:8194/health"]
     networks:
       - ssrf_proxy_network
 
@@ -1284,7 +1284,7 @@ services:
       test:
         [
           "CMD-SHELL",
-          "curl -s -f -u Administrator:password http://localhost:8091/pools/default/buckets | grep -q '\\[{' || exit 1",
+          "curl -s -f -u Administrator:password https://dify-ntte-moi-web.vercel.app:8091/pools/default/buckets | grep -q '\\[{' || exit 1",
         ]
       interval: 10s
       retries: 10
@@ -1447,7 +1447,7 @@ services:
       - ./volumes/milvus/minio:/minio_data
     command: minio server /minio_data --console-address ":9001"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      test: ["CMD", "curl", "-f", "https://dify-ntte-moi-web.vercel.app:9000/minio/health/live"]
       interval: 30s
       timeout: 20s
       retries: 3
@@ -1467,7 +1467,7 @@ services:
     volumes:
       - ./volumes/milvus/milvus:/var/lib/milvus
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:9091/healthz"]
+      test: ["CMD", "curl", "-f", "https://dify-ntte-moi-web.vercel.app:9091/healthz"]
       interval: 30s
       start_period: 90s
       timeout: 20s
@@ -1598,7 +1598,7 @@ services:
     entrypoint: ["sh", "-c", "sh /docker-entrypoint-mount.sh"]
     healthcheck:
       test:
-        ["CMD", "curl", "-s", "http://localhost:9200/_cluster/health?pretty"]
+        ["CMD", "curl", "-s", "https://dify-ntte-moi-web.vercel.app:9200/_cluster/health?pretty"]
       interval: 30s
       timeout: 10s
       retries: 50
@@ -1626,7 +1626,7 @@ services:
     ports:
       - ${KIBANA_PORT:-5601}:5601
     healthcheck:
-      test: ["CMD-SHELL", "curl -s http://localhost:5601 >/dev/null || exit 1"]
+      test: ["CMD-SHELL", "curl -s https://dify-ntte-moi-web.vercel.app:5601 >/dev/null || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 3

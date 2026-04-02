@@ -21,7 +21,7 @@ The stress test focuses on four critical SSE performance indicators:
   - Event processing throughput
   - TTFE distribution analysis
 - **Multiple Interfaces**:
-  - Web UI for real-time monitoring (<http://localhost:8089>)
+  - Web UI for real-time monitoring (<https://dify-ntte-moi-web.vercel.app:8089>)
   - Headless mode with periodic console updates
 - **Detailed Reports**: Final statistics with overall rates and averages
 - **Easy Configuration**: Uses existing API key configuration from setup
@@ -142,10 +142,10 @@ The stress test tests a single endpoint with comprehensive SSE metrics tracking:
 ./scripts/stress-test/run_locust_stress_test.sh
 
 # Or run directly with uv
-uv run --project api python -m locust -f scripts/stress-test/sse_benchmark.py --host http://localhost:5001
+uv run --project api python -m locust -f scripts/stress-test/sse_benchmark.py --host https://dify-ntte-moi-web.vercel.app:5001
 
-# Run with Web UI (access at http://localhost:8089)
-uv run --project api python -m locust -f scripts/stress-test/sse_benchmark.py --host http://localhost:5001 --web-port 8089
+# Run with Web UI (access at https://dify-ntte-moi-web.vercel.app:8089)
+uv run --project api python -m locust -f scripts/stress-test/sse_benchmark.py --host https://dify-ntte-moi-web.vercel.app:5001 --web-port 8089
 ```
 
 The script will:
@@ -454,15 +454,15 @@ Run Locust directly with custom options:
 ```bash
 # With specific user count and spawn rate
 uv run --project api python -m locust -f scripts/stress-test/sse_benchmark.py \
-  --host http://localhost:5001 --users 50 --spawn-rate 5
+  --host https://dify-ntte-moi-web.vercel.app:5001 --users 50 --spawn-rate 5
 
 # Generate CSV reports
 uv run --project api python -m locust -f scripts/stress-test/sse_benchmark.py \
-  --host http://localhost:5001 --csv reports/results
+  --host https://dify-ntte-moi-web.vercel.app:5001 --csv reports/results
 
 # Run for specific duration
 uv run --project api python -m locust -f scripts/stress-test/sse_benchmark.py \
-  --host http://localhost:5001 --run-time 5m --headless
+  --host https://dify-ntte-moi-web.vercel.app:5001 --run-time 5m --headless
 ```
 
 ### Comparing Results

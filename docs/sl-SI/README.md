@@ -81,7 +81,7 @@ cp .env.example .env
 docker compose up -d
 ```
 
-Po zagonu lahko dostopate do nadzorne plošče Dify v brskalniku na [http://localhost/install](http://localhost/install) in začnete postopek inicializacije.
+Po zagonu lahko dostopate do nadzorne plošče Dify v brskalniku na [https://dify-ntte-moi-web.vercel.app/install](https://dify-ntte-moi-web.vercel.app/install) in začnete postopek inicializacije.
 
 #### Iskanje pomoči
 

@@ -43,7 +43,7 @@ describe('getBaseURL', () => {
     const url = getBaseURL('/api')
 
     // Assert
-    expect(url.href).toBe('http://localhost/api')
+    expect(url.href).toBe('https://dify-ntte-moi-web.vercel.app/api')
     expect(warnSpy).toHaveBeenCalledTimes(1)
     expect(warnSpy).toHaveBeenCalledWith('Using localhost as base URL in server environment, please configure accordingly.')
   })

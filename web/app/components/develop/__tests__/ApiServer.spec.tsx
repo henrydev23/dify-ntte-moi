@@ -44,8 +44,8 @@ describe('ApiServer', () => {
 
   describe('with different API URLs', () => {
     it('should render localhost URL', () => {
-      render(<ApiServer apiBaseUrl="http://localhost:3000/api" />)
-      expect(screen.getByText('http://localhost:3000/api')).toBeInTheDocument()
+      render(<ApiServer apiBaseUrl="https://dify-ntte-moi-web.vercel.app:3000/api" />)
+      expect(screen.getByText('https://dify-ntte-moi-web.vercel.app:3000/api')).toBeInTheDocument()
     })
 
     it('should render production URL', () => {

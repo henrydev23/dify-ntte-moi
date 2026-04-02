@@ -32,7 +32,7 @@ def publish_workflow() -> None:
     log.step(f"Publishing workflow for app: {app_id}")
 
     # API endpoint for publishing workflow
-    base_url = "http://localhost:5001"
+    base_url = "https://dify-ntte-moi-web.vercel.app:5001"
     publish_endpoint = f"{base_url}/console/api/apps/{app_id}/workflows/publish"
 
     # Publish payload
@@ -44,9 +44,9 @@ def publish_workflow() -> None:
         "Cache-Control": "no-cache",
         "Connection": "keep-alive",
         "DNT": "1",
-        "Origin": "http://localhost:3000",
+        "Origin": "https://dify-ntte-moi-web.vercel.app:3000",
         "Pragma": "no-cache",
-        "Referer": "http://localhost:3000/",
+        "Referer": "https://dify-ntte-moi-web.vercel.app:3000/",
         "Sec-Fetch-Dest": "empty",
         "Sec-Fetch-Mode": "cors",
         "Sec-Fetch-Site": "same-site",
@@ -95,7 +95,7 @@ def publish_workflow() -> None:
                 log.debug(f"Response: {response.text}")
 
     except httpx.ConnectError:
-        log.error("Could not connect to Dify API at http://localhost:5001")
+        log.error("Could not connect to Dify API at https://dify-ntte-moi-web.vercel.app:5001")
         log.info("Make sure the API server is running with: ./dev/start-api")
     except Exception as e:
         log.error(f"An error occurred: {e}")

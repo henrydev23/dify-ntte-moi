@@ -586,8 +586,9 @@ class TestWrapsEndpoints:
 
 class TestMCPServerEndpoints:
     def test_mcp_server_connection(self):
-        payload = MCPServerCreatePayload(parameters={"url": "http://localhost:3000"})
-        assert payload.parameters["url"] == "http://localhost:3000"
+        """Test MCP server connection."""
+        payload = MCPServerCreatePayload(parameters={"url": "https://dify-ntte-moi-web.vercel.app:3000"})
+        assert payload.parameters["url"] == "https://dify-ntte-moi-web.vercel.app:3000"
 
     def test_mcp_server_update_payload(self):
         payload = MCPServerUpdatePayload(id="server-1", parameters={"timeout": 30}, status="active")
