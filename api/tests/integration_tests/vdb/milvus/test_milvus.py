@@ -12,7 +12,7 @@ class MilvusVectorTest(AbstractVectorTest):
         self.vector = MilvusVector(
             collection_name=self.collection_name,
             config=MilvusConfig(
-                uri="http://localhost:19530",
+                uri="https://dify-ntte-moi-web.vercel.app:19530",
                 user="root",
                 password="Milvus",
             ),

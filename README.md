@@ -80,7 +80,7 @@ cp .env.example .env
 docker compose up -d
 ```
 
-After running, you can access the Dify dashboard in your browser at [http://localhost/install](http://localhost/install) and start the initialization process.
+After running, you can access the Dify dashboard in your browser at [https://dify-ntte-moi-web.vercel.app/install](https://dify-ntte-moi-web.vercel.app/install) and start the initialization process.
 
 #### Seeking help
 
@@ -233,3 +233,4 @@ To protect your privacy, please avoid posting security issues on GitHub. Instead
 ## License
 
 This repository is licensed under the [Dify Open Source License](LICENSE), based on Apache 2.0 with additional conditions.
+# dify-ntte-moi

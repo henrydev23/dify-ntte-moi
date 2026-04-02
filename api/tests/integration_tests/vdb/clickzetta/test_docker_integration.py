@@ -60,7 +60,7 @@ def test_clickzetta_connection():
 def test_dify_api():
     """Test Dify API with Clickzetta backend"""
     print("\n=== Testing Dify API ===")
-    base_url = "http://localhost:5001"
+    base_url = "https://dify-ntte-moi-web.vercel.app:5001"
 
     # Wait for API to be ready
     max_retries = 30
@@ -153,7 +153,7 @@ def main():
         print("\n🎉 All tests passed! Clickzetta is ready for Dify Docker deployment.")
         print("\nNext steps:")
         print("1. Run: cd docker && docker-compose -f docker-compose.yaml -f docker-compose.clickzetta.yaml up -d")
-        print("2. Access Dify at http://localhost:3000")
+        print("2. Access Dify at https://dify-ntte-moi-web.vercel.app:3000")
         print("3. Create a dataset and test vector storage with Clickzetta")
         return 0
     else:

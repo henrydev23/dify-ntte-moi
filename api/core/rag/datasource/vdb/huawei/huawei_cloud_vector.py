@@ -208,7 +208,7 @@ class HuaweiCloudVectorFactory(AbstractVectorFactory):
         return HuaweiCloudVector(
             index_name=collection_name,
             config=HuaweiCloudVectorConfig(
-                hosts=dify_config.HUAWEI_CLOUD_HOSTS or "http://localhost:9200",
+                hosts=dify_config.HUAWEI_CLOUD_HOSTS or "https://dify-ntte-moi-web.vercel.app:9200",
                 username=dify_config.HUAWEI_CLOUD_USER,
                 password=dify_config.HUAWEI_CLOUD_PASSWORD,
             ),

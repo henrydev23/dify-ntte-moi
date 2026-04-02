@@ -123,7 +123,7 @@ cp .env.example .env
 docker compose up -d
 ```
 
-Sau khi chạy, bạn có thể truy cập bảng điều khiển Dify trong trình duyệt của bạn tại [http://localhost/install](http://localhost/install) và bắt đầu quá trình khởi tạo.
+Sau khi chạy, bạn có thể truy cập bảng điều khiển Dify trong trình duyệt của bạn tại [https://dify-ntte-moi-web.vercel.app/install](https://dify-ntte-moi-web.vercel.app/install) và bắt đầu quá trình khởi tạo.
 
 > Nếu bạn muốn đóng góp cho Dify hoặc phát triển thêm, hãy tham khảo [hướng dẫn triển khai từ mã nguồn](https://docs.dify.ai/getting-started/install-self-hosted/local-source-code) của chúng tôi
 

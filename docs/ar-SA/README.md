@@ -117,7 +117,7 @@ cp .env.example .env
 docker compose up -d
 ```
 
-بعد التشغيل، يمكنك الوصول إلى لوحة تحكم Dify في متصفحك على [http://localhost/install](http://localhost/install) وبدء عملية التهيئة.
+بعد التشغيل، يمكنك الوصول إلى لوحة تحكم Dify في متصفحك على [https://dify-ntte-moi-web.vercel.app/install](https://dify-ntte-moi-web.vercel.app/install) وبدء عملية التهيئة.
 
 > إذا كنت ترغب في المساهمة في Dify أو القيام بتطوير إضافي، فانظر إلى [دليلنا للنشر من الشفرة (code) المصدرية](https://docs.dify.ai/getting-started/install-self-hosted/local-source-code)
 

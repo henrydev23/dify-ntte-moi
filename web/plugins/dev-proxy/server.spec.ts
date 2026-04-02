@@ -34,7 +34,7 @@ describe('dev proxy server', () => {
   // Scenario: only localhost dev origins should be reflected for credentialed CORS.
   it('should only allow local development origins', () => {
     // Assert
-    expect(isAllowedDevOrigin('http://localhost:3000')).toBe(true)
+    expect(isAllowedDevOrigin('https://dify-ntte-moi-web.vercel.app:3000')).toBe(true)
     expect(isAllowedDevOrigin('http://127.0.0.1:3000')).toBe(true)
     expect(isAllowedDevOrigin('https://example.com')).toBe(false)
   })
@@ -60,7 +60,7 @@ describe('dev proxy server', () => {
     // Act
     const response = await app.request('http://127.0.0.1:5001/console/api/apps?page=1', {
       headers: {
-        Origin: 'http://localhost:3000',
+        Origin: 'https://dify-ntte-moi-web.vercel.app:3000',
         Cookie: 'access_token=abc',
       },
     })
@@ -79,7 +79,7 @@ describe('dev proxy server', () => {
     const requestHeaders = requestInit?.headers as Headers
     expect(requestHeaders.get('cookie')).toBe('__Host-access_token=abc')
     expect(requestHeaders.get('origin')).toBe('https://cloud.dify.ai')
-    expect(response.headers.get('access-control-allow-origin')).toBe('http://localhost:3000')
+    expect(response.headers.get('access-control-allow-origin')).toBe('https://dify-ntte-moi-web.vercel.app:3000')
     expect(response.headers.get('access-control-allow-credentials')).toBe('true')
     expect(response.headers.get('content-encoding')).toBeNull()
     expect(response.headers.get('content-length')).toBeNull()
@@ -102,14 +102,14 @@ describe('dev proxy server', () => {
     const response = await app.request('http://127.0.0.1:5001/api/messages', {
       method: 'OPTIONS',
       headers: {
-        'Origin': 'http://localhost:3000',
+        'Origin': 'https://dify-ntte-moi-web.vercel.app:3000',
         'Access-Control-Request-Headers': 'authorization,content-type,x-csrf-token',
       },
     })
 
     // Assert
     expect(response.status).toBe(204)
-    expect(response.headers.get('access-control-allow-origin')).toBe('http://localhost:3000')
+    expect(response.headers.get('access-control-allow-origin')).toBe('https://dify-ntte-moi-web.vercel.app:3000')
     expect(response.headers.get('access-control-allow-credentials')).toBe('true')
     expect(response.headers.get('access-control-allow-headers')).toBe('authorization,content-type,x-csrf-token')
   })

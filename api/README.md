@@ -40,9 +40,7 @@ The scripts resolve paths relative to their location, so you can run them from a
    ./dev/start-web
    ```
 
-   `./dev/setup` and `./dev/start-web` install JavaScript dependencies through the repository root workspace, so you do not need a separate `cd web && pnpm install` step.
-
-1. Set up your application by visiting `http://localhost:3000`.
+1. Set up your application by visiting `https://dify-ntte-moi-web.vercel.app:3000`.
 
 1. Start the worker service (async and scheduler tasks, runs from `api`).
 

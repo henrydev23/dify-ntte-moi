@@ -127,7 +127,7 @@ cp .env.example .env
 docker compose up -d
 ```
 
-Após a execução, você pode acessar o painel do Dify no navegador em [http://localhost/install](http://localhost/install) e iniciar o processo de inicialização.
+Após a execução, você pode acessar o painel do Dify no navegador em [https://dify-ntte-moi-web.vercel.app/install](https://dify-ntte-moi-web.vercel.app/install) e iniciar o processo de inicialização.
 
 > Se você deseja contribuir com o Dify ou fazer desenvolvimento adicional, consulte nosso [guia para implantar a partir do código fonte](https://docs.dify.ai/getting-started/install-self-hosted/local-source-code).
 

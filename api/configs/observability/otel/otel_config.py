@@ -24,7 +24,7 @@ class OTelConfig(BaseSettings):
 
     OTLP_BASE_ENDPOINT: str = Field(
         description="OTLP base endpoint",
-        default="http://localhost:4318",
+        default="https://dify-ntte-moi-web.vercel.app:4318",
     )
 
     OTLP_API_KEY: str = Field(

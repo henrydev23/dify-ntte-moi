@@ -61,7 +61,7 @@ describe('EditWorkspaceModal', () => {
   it('should submit update when confirming as owner', async () => {
     const user = userEvent.setup()
     const mockAssign = vi.fn()
-    vi.stubGlobal('location', { ...window.location, assign: mockAssign, origin: 'http://localhost' })
+    vi.stubGlobal('location', { ...window.location, assign: mockAssign, origin: 'https://dify-ntte-moi-web.vercel.app' })
     vi.mocked(updateWorkspaceInfo).mockResolvedValue({} as ICurrentWorkspace)
 
     renderModal()
@@ -76,7 +76,7 @@ describe('EditWorkspaceModal', () => {
         url: '/workspaces/info',
         body: { name: 'Renamed Workspace' },
       })
-      expect(mockAssign).toHaveBeenCalledWith('http://localhost')
+      expect(mockAssign).toHaveBeenCalledWith('https://dify-ntte-moi-web.vercel.app')
     })
 
     expect(mockOnCancel).not.toHaveBeenCalled()

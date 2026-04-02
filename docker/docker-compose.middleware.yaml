@@ -117,7 +117,7 @@ services:
       - ./volumes/sandbox/dependencies:/dependencies
       - ./volumes/sandbox/conf:/conf
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8194/health"]
+      test: ["CMD", "curl", "-f", "https://dify-ntte-moi-web.vercel.app:8194/health"]
     networks:
       - ssrf_proxy_network
 

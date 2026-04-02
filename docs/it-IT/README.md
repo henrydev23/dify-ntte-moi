@@ -84,7 +84,7 @@ cp .env.example .env
 docker compose up -d
 ```
 
-Dopo aver avviato il server, potete accedere al dashboard di Dify tramite il vostro browser all'indirizzo [http://localhost/install](http://localhost/install) e avviare il processo di inizializzazione.
+Dopo aver avviato il server, potete accedere al dashboard di Dify tramite il vostro browser all'indirizzo [https://dify-ntte-moi-web.vercel.app/install](https://dify-ntte-moi-web.vercel.app/install) e avviare il processo di inizializzazione.
 
 #### Richiedere Aiuto
 

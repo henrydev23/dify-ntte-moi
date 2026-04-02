@@ -38,7 +38,7 @@ echo
 echo -e "${YELLOW}Checking services...${NC}"
 
 # Check Dify API
-if curl -s -f http://localhost:5001/health > /dev/null 2>&1; then
+if curl -s -f https://dify-ntte-moi-web.vercel.app:5001/health > /dev/null 2>&1; then
     echo -e "${GREEN}✓ Dify API is running${NC}"
     
     # Warn if running in debug mode (check for werkzeug in process)
@@ -63,7 +63,7 @@ else
 fi
 
 # Check Mock OpenAI server
-if curl -s -f http://localhost:5004/v1/models > /dev/null 2>&1; then
+if curl -s -f https://dify-ntte-moi-web.vercel.app:5004/v1/models > /dev/null 2>&1; then
     echo -e "${GREEN}✓ Mock OpenAI server is running${NC}"
 else
     echo -e "${RED}✗ Mock OpenAI server is not running on port 5004${NC}"
@@ -104,7 +104,7 @@ echo
 # Ask user for run mode
 echo -e "${YELLOW}Select run mode:${NC}"
 echo "  1) Headless (CLI only) - Default"
-echo "  2) Web UI (http://localhost:8089)"
+echo "  2) Web UI (https://dify-ntte-moi-web.vercel.app:8089)"
 echo -n "Choice [1]: "
 read -t 10 choice || choice="1"
 echo
@@ -115,13 +115,13 @@ LOCUST_SCRIPT="${STRESS_TEST_DIR}/sse_benchmark.py"
 # Prepare Locust command
 if [ "$choice" = "2" ]; then
     echo -e "${BLUE}Starting Locust with Web UI...${NC}"
-    echo -e "${YELLOW}Access the web interface at: ${CYAN}http://localhost:8089${NC}"
+    echo -e "${YELLOW}Access the web interface at: ${CYAN}https://dify-ntte-moi-web.vercel.app:8089${NC}"
     echo
     
     # Run with web UI
     uv --project api run locust \
         -f ${LOCUST_SCRIPT} \
-        --host http://localhost:5001 \
+        --host https://dify-ntte-moi-web.vercel.app:5001 \
         --web-port 8089
 else
     echo -e "${BLUE}Starting stress test in headless mode...${NC}"
@@ -130,7 +130,7 @@ else
     # Run in headless mode with CSV output
     uv --project api run locust \
         -f ${LOCUST_SCRIPT} \
-        --host http://localhost:5001 \
+        --host https://dify-ntte-moi-web.vercel.app:5001 \
         --users $USERS \
         --spawn-rate $SPAWN_RATE \
         --run-time $RUN_TIME \

@@ -225,7 +225,7 @@ class PluginConfig(BaseSettings):
 
     PLUGIN_DAEMON_URL: HttpUrl = Field(
         description="Plugin API URL",
-        default=HttpUrl("http://localhost:5002"),
+        default=HttpUrl("https://dify-ntte-moi-web.vercel.app:5002"),
     )
 
     PLUGIN_DAEMON_KEY: str = Field(
@@ -314,10 +314,10 @@ class EndpointConfig(BaseSettings):
     )
 
     ENDPOINT_URL_TEMPLATE: str = Field(
-        description="Template url for endpoint plugin", default="http://localhost:5002/e/{hook_id}"
+        description="Template url for endpoint plugin", default="https://dify-ntte-moi-web.vercel.app:5002/e/{hook_id}"
     )
 
-    TRIGGER_URL: str = Field(description="Template url for triggers", default="http://localhost:5001")
+    TRIGGER_URL: str = Field(description="Template url for triggers", default="https://dify-ntte-moi-web.vercel.app:5001")
 
 
 class FileAccessConfig(BaseSettings):

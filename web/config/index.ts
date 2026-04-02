@@ -17,15 +17,15 @@ const getStringConfig = (
 
 export const API_PREFIX = getStringConfig(
   env.NEXT_PUBLIC_API_PREFIX,
-  'http://localhost:5001/console/api',
+  'https://dify-ntte-moi-web.vercel.app:5001/console/api',
 )
 export const PUBLIC_API_PREFIX = getStringConfig(
   env.NEXT_PUBLIC_PUBLIC_API_PREFIX,
-  'http://localhost:5001/api',
+  'https://dify-ntte-moi-web.vercel.app:5001/api',
 )
 export const MARKETPLACE_API_PREFIX = getStringConfig(
   env.NEXT_PUBLIC_MARKETPLACE_API_PREFIX,
-  'http://localhost:5002/api',
+  'https://dify-ntte-moi-web.vercel.app:5002/api',
 )
 export const MARKETPLACE_URL_PREFIX = getStringConfig(
   env.NEXT_PUBLIC_MARKETPLACE_URL_PREFIX,

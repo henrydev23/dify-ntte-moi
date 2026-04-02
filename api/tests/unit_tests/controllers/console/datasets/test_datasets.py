@@ -1737,7 +1737,7 @@ class TestDatasetApiBaseUrlApi:
         method = unwrap(api.get)
 
         with (
-            app.test_request_context("http://localhost:5000/"),
+            app.test_request_context("https://dify-ntte-moi-web.vercel.app:5000/"),
             patch(
                 "controllers.console.datasets.datasets.dify_config.SERVICE_API_URL",
                 None,
@@ -1745,7 +1745,7 @@ class TestDatasetApiBaseUrlApi:
         ):
             response = method(api)
 
-        assert response["api_base_url"] == "http://localhost:5000/v1"
+        assert response["api_base_url"] == "https://dify-ntte-moi-web.vercel.app:5000/v1"
 
 
 class TestDatasetRetrievalSettingApi:

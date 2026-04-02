@@ -84,7 +84,7 @@ cp .env.example .env
 docker compose up -d
 ```
 
-চালানোর পর, আপনি আপনার ব্রাউজারে [http://localhost/install](http://localhost/install)-এ ডিফাই ড্যাশবোর্ডে অ্যাক্সেস করতে পারেন এবং ইনিশিয়ালাইজেশন প্রক্রিয়া শুরু করতে পারেন।
+চালানোর পর, আপনি আপনার ব্রাউজারে [https://dify-ntte-moi-web.vercel.app/install](https://dify-ntte-moi-web.vercel.app/install)-এ ডিফাই ড্যাশবোর্ডে অ্যাক্সেস করতে পারেন এবং ইনিশিয়ালাইজেশন প্রক্রিয়া শুরু করতে পারেন।
 
 #### সাহায্যের খোঁজে
 

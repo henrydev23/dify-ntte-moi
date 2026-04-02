@@ -230,7 +230,7 @@ class MLflowConfig(BaseTracingConfig):
     Model class for MLflow tracing config.
     """
 
-    tracking_uri: str = "http://localhost:5000"
+    tracking_uri: str = "https://dify-ntte-moi-web.vercel.app:5000"
     experiment_id: str = "0"  # Default experiment id in MLflow is 0
     username: str | None = None
     password: str | None = None
@@ -242,7 +242,7 @@ class MLflowConfig(BaseTracingConfig):
             raise ValueError(
                 "Please use Databricks tracing config below to record traces to Databricks-managed MLflow instances."
             )
-        return validate_url_with_path(v, "http://localhost:5000")
+        return validate_url_with_path(v, "https://dify-ntte-moi-web.vercel.app:5000")
 
     @field_validator("experiment_id")
     @classmethod

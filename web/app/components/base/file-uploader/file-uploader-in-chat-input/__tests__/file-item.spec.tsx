@@ -263,7 +263,7 @@ describe('FileItem (chat-input)', () => {
   })
 
   it('should use createObjectURL when no url or base64Url but has originalFile', () => {
-    const mockUrl = 'blob:http://localhost/test-blob'
+    const mockUrl = 'blob:https://dify-ntte-moi-web.vercel.app/test-blob'
     const createObjectURLSpy = vi.spyOn(URL, 'createObjectURL').mockReturnValue(mockUrl)
 
     const file = createFile({

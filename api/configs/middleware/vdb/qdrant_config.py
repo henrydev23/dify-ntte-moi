@@ -8,7 +8,7 @@ class QdrantConfig(BaseSettings):
     """
 
     QDRANT_URL: str | None = Field(
-        description="URL of the Qdrant server (e.g., 'http://localhost:6333' or 'https://qdrant.example.com')",
+        description="URL of the Qdrant server (e.g., 'https://dify-ntte-moi-web.vercel.app:6333' or 'https://qdrant.example.com')",
         default=None,
     )
 

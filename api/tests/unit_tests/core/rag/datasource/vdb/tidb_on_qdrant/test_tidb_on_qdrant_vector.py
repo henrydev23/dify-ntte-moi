@@ -18,7 +18,7 @@ class TestTidbOnQdrantVectorDeleteByIds:
     def vector_instance(self):
         """Create a TidbOnQdrantVector instance for testing."""
         config = TidbOnQdrantConfig(
-            endpoint="http://localhost:6333",
+            endpoint="https://dify-ntte-moi-web.vercel.app:6333",
             api_key="test_api_key",
         )
 

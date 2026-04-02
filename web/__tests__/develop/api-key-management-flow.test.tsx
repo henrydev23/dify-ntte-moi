@@ -161,10 +161,10 @@ describe('API Key management flow', () => {
     const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime })
 
     const { rerender } = render(
-      <ApiServer apiBaseUrl="http://localhost:5001/v1" appId="app-dev" />,
+      <ApiServer apiBaseUrl="https://dify-ntte-moi-web.vercel.app:5001/v1" appId="app-dev" />,
     )
 
-    expect(screen.getByText('http://localhost:5001/v1')).toBeInTheDocument()
+    expect(screen.getByText('https://dify-ntte-moi-web.vercel.app:5001/v1')).toBeInTheDocument()
 
     // Open modal and verify it works with the same appId
     await act(async () => {

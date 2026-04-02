@@ -6,7 +6,7 @@ from core.rag.datasource.vdb.weaviate.weaviate_vector import WeaviateConfig, Wea
 def test_init_client_with_valid_config():
     """Test successful client initialization with valid configuration."""
     config = WeaviateConfig(
-        endpoint="http://localhost:8080",
+        endpoint="https://dify-ntte-moi-web.vercel.app:8080",
         api_key="WVF5YThaHlkYwhGUSmCRgsX3tD5ngdN8pkih",
     )
 

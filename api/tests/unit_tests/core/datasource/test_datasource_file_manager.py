@@ -17,7 +17,7 @@ class TestDatasourceFileManager:
     @patch("core.datasource.datasource_file_manager.dify_config")
     def test_sign_file(self, mock_config, mock_urandom, mock_time):
         # Setup
-        mock_config.FILES_URL = "http://localhost:5001"
+        mock_config.FILES_URL = "https://dify-ntte-moi-web.vercel.app:5001"
         mock_config.SECRET_KEY = "test_secret"
         mock_time.return_value = 1700000000
         mock_urandom.return_value = b"1234567890abcdef"  # 16 bytes
@@ -29,7 +29,7 @@ class TestDatasourceFileManager:
         signed_url = DatasourceFileManager.sign_file(datasource_file_id, extension)
 
         # Verify
-        assert signed_url.startswith("http://localhost:5001/files/datasources/file_id_123.png?")
+        assert signed_url.startswith("https://dify-ntte-moi-web.vercel.app:5001/files/datasources/file_id_123.png?")
         assert "timestamp=1700000000" in signed_url
         assert f"nonce={mock_urandom.return_value.hex()}" in signed_url
         assert "sign=" in signed_url
@@ -39,7 +39,7 @@ class TestDatasourceFileManager:
     @patch("core.datasource.datasource_file_manager.dify_config")
     def test_sign_file_empty_secret(self, mock_config, mock_urandom, mock_time):
         # Setup
-        mock_config.FILES_URL = "http://localhost:5001"
+        mock_config.FILES_URL = "https://dify-ntte-moi-web.vercel.app:5001"
         mock_config.SECRET_KEY = None  # Empty secret
         mock_time.return_value = 1700000000
         mock_urandom.return_value = b"1234567890abcdef"
@@ -306,7 +306,7 @@ class TestDatasourceFileManager:
     def test_get_file_binary_by_message_file_id(self, mock_storage, mock_db):
         # Setup
         mock_message_file = MagicMock(spec=MessageFile)
-        mock_message_file.url = "http://localhost/files/tools/tool_id.png"
+        mock_message_file.url = "https://dify-ntte-moi-web.vercel.app/files/tools/tool_id.png"
 
         mock_tool_file = MagicMock(spec=ToolFile)
         mock_tool_file.file_key = "tool_key"
@@ -333,7 +333,7 @@ class TestDatasourceFileManager:
     def test_get_file_binary_by_message_file_id_with_extension(self, mock_storage, mock_db):
         # Test that it correctly parses tool_id even with extension in URL
         mock_message_file = MagicMock(spec=MessageFile)
-        mock_message_file.url = "http://localhost/files/tools/abcdef.png"
+        mock_message_file.url = "https://dify-ntte-moi-web.vercel.app/files/tools/abcdef.png"
 
         mock_tool_file = MagicMock(spec=ToolFile)
         mock_tool_file.id = "abcdef"

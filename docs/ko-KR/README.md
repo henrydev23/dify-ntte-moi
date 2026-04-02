@@ -122,7 +122,7 @@ cp .env.example .env
 docker compose up -d
 ```
 
-실행 후 브라우저의 [http://localhost/install](http://localhost/install) 에서 Dify 대시보드에 액세스하고 초기화 프로세스를 시작할 수 있습니다.
+실행 후 브라우저의 [https://dify-ntte-moi-web.vercel.app/install](https://dify-ntte-moi-web.vercel.app/install) 에서 Dify 대시보드에 액세스하고 초기화 프로세스를 시작할 수 있습니다.
 
 > Dify에 기여하거나 추가 개발을 하고 싶다면 소스 코드에서 [배포에 대한 가이드](https://docs.dify.ai/getting-started/install-self-hosted/local-source-code)를 참조하세요.
 

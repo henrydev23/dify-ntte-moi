@@ -23,7 +23,7 @@ def mock_jsonify():
 
 class DummyWebhookTrigger:
     webhook_id = "wh-1"
-    webhook_url = "http://localhost:5001/triggers/webhook/wh-1"
+    webhook_url = "https://dify-ntte-moi-web.vercel.app:5001/triggers/webhook/wh-1"
     tenant_id = "tenant-1"
     app_id = "app-1"
     node_id = "node-1"

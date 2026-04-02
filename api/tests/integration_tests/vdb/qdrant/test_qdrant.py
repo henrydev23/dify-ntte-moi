@@ -16,7 +16,7 @@ class QdrantVectorTest(AbstractVectorTest):
             collection_name=self.collection_name,
             group_id=self.dataset_id,
             config=QdrantConfig(
-                endpoint="http://localhost:6333",
+                endpoint="https://dify-ntte-moi-web.vercel.app:6333",
                 api_key="difyai123456",
             ),
         )

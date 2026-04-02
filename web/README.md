@@ -59,7 +59,7 @@ pnpm -C web run dev:vinext
 pnpm -C web run dev:proxy
 ```
 
-Open <http://localhost:3000> with your browser to see the result.
+Open <https://dify-ntte-moi-web.vercel.app:3000> with your browser to see the result.
 
 You can start editing the files under `web/app`.
 The page auto-updates as you edit the file.
@@ -102,7 +102,7 @@ To start the storybook server, run:
 pnpm -C web storybook
 ```
 
-Open <http://localhost:6006> with your browser to see the result.
+Open <https://dify-ntte-moi-web.vercel.app:6006> with your browser to see the result.
 
 ## Lint Code
 
