@@ -54,7 +54,7 @@ jobs:
         run: uv run --project api bash dev/pytest/pytest_unit_tests.sh
 
       - name: Upload unit coverage data
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: api-coverage-unit
           path: coverage-unit
@@ -105,7 +105,7 @@ jobs:
         run: sh .github/workflows/expose_service_ports.sh
 
       - name: Set up Sandbox
-        uses: hoverkraft-tech/compose-action@4894d2492015c1774ee5a13a95b1072093087ec3 # v2.5.0
+        uses: hoverkraft-tech/compose-action@d2bee4f07e8ca410d6b196d00f90c12e7d48c33a # v2.6.0
         with:
           compose-file: |
             docker/docker-compose.middleware.yaml
@@ -129,7 +129,7 @@ jobs:
             api/tests/test_containers_integration_tests
 
       - name: Upload integration coverage data
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: api-coverage-integration
           path: coverage-integration
